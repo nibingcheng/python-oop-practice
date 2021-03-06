@@ -218,27 +218,43 @@ class Card:
 
     def show(self):
         print(f"{self.rank} of {self.suit}, Score = {self.score}")
-
+        
+    def __str__(self):
+        return f"{self.rank} of {self.suit}"
     
 # card1 = Card('clubs', 11)
 # card1.show()        
         
 class Deck:
     def __init__(self):
-        self.length = 52
+        self.length = 0
         self.cards = []
 
+    def create(self):
         for i in range(1,14):
             for j in ['hearts', 'spades', 'clubs', 'diamonds']:
-                # self.cards.append(Card(j, i))
-                print(j, i)
-                    
-    def __str__(self):
-        return f'{self.cards}'
-
+                self.cards.append(Card(j, i))
+                # self.cards.append([j, i])
+                self.length = len(self.cards)
+                        
+    def shuffle(self):
+        random.shuffle(self.cards)
+    
+    def draw(self):
+        random.shuffle(self.cards)
+        self.length -= 1
+        return self.cards.pop()
+    
     def show(self):
         print(self.cards)
     
+    def __str__(self):
+        return f'{self.cards} {self.length}'
     
-deck1 = Deck()
-# deck1.show()    
+deck = Deck()
+deck.create()
+deck.draw().show()
+deck.draw().show()
+deck.draw().show()
+# print(deck)
+deck.show()
