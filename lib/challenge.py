@@ -54,10 +54,10 @@
 # class Toyota(Car):
 #     def __init__(self, model, color, make='Toyota'):
 #         super().__init__(make, model, color)
-#         # self.make = 'Toyota'
-#         # self.model = model
-#         # self.color = color
-        
+#        
+#     def drive(self):
+#         print("zoom zoom")
+          
 #     def __str__(self):
 #         return f'{self.make} {self.model} {self.color}'
 
@@ -199,3 +199,46 @@ new_lion = Lion()
 #
 # Instantiate an instance of your Deck and start drawing random cards!
 #
+import random
+
+class Card:
+    def __init__(self, suit, score):
+        self.suit = suit
+        self.score = score
+        if score == 1:
+            self.rank = 'Ace'
+        elif score == 11:
+            self.rank = 'Jack'
+        elif score == 12:
+            self.rank = 'Queen'
+        elif score == 13:
+            self.rank = 'King'
+        else:
+            self.rank = str(score)
+
+    def show(self):
+        print(f"{self.rank} of {self.suit}, Score = {self.score}")
+
+    
+# card1 = Card('clubs', 11)
+# card1.show()        
+        
+class Deck:
+    def __init__(self):
+        self.length = 52
+        self.cards = []
+
+        for i in range(1,14):
+            for j in ['hearts', 'spades', 'clubs', 'diamonds']:
+                # self.cards.append(Card(j, i))
+                print(j, i)
+                    
+    def __str__(self):
+        return f'{self.cards}'
+
+    def show(self):
+        print(self.cards)
+    
+    
+deck1 = Deck()
+# deck1.show()    
