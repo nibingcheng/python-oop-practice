@@ -246,7 +246,7 @@ class Deck:
         return self.cards.pop()
     
     def show(self):
-        print(self.cards)
+        print(self.cards, len(self.cards))
     
     def __str__(self):
         return f'{self.cards} {self.length}'
@@ -256,5 +256,7 @@ deck.create()
 deck.draw().show()
 deck.draw().show()
 deck.draw().show()
+for item in deck.cards:
+    print(item)
+# deck.show()
 # print(deck)
-deck.show()
