@@ -222,6 +222,9 @@ class Card:
     def __str__(self):
         return f"{self.rank} of {self.suit}"
     
+    def __repr__(self):
+        return f"{self.rank} of {self.suit}"
+    
 # card1 = Card('clubs', 11)
 # card1.show()        
         
@@ -251,12 +254,14 @@ class Deck:
     def __str__(self):
         return f'{self.cards} {self.length}'
     
+   
+    
 deck = Deck()
 deck.create()
 deck.draw().show()
 deck.draw().show()
 deck.draw().show()
-for item in deck.cards:
-    print(item)
-# deck.show()
+# for item in deck.cards:
+    # print(item)
+deck.show()
 # print(deck)
