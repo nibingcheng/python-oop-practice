@@ -52,8 +52,8 @@
 # Make an instance of your Toyota class.
 #
 # class Toyota(Car):
-#     def __init__(self, model, color, make='Toyota'):
-#         super().__init__(make, model, color)
+#     def __init__(self, model, color):
+#         super().__init__(make='Toyota', model, color)
 #        
 #     def drive(self):
 #         print("zoom zoom")
